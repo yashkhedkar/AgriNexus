@@ -155,35 +155,38 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 
 	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" style="background-color: #1C00ff00;">
-		<div class="container">
-			<a class="navbar-brand" href="{{ url_for('home') }}">
-				<img src="{{ url_for('static', filename='images/logo.jpg') }}" style="width: 90px; height: 55px" alt="">
+	<nav class="navbar navbar-expand-lg bg-transparent ">
+		<div class="container-fluid mx-6" >
+			<a class="navbar-brand" href="{{ url_for('home') }}"></a>
+				<img src="{{ url_for('static', filename='images/lo.jpg') }}" style="width: 90px; height: 55px" alt="">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
 				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse" id="navbarResponsive">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active">
-						<a class="nav-link" href="{{ url_for('home') }}">Home
-							<span class="sr-only">(current)</span>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('crop_recommend') }}">Crop</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('fertilizer_recommendation') }}">Fertilizer</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="{{ url_for('disease_prediction') }}">Disease</a>
-					</li>
-				</ul>
-			</div>
+		  
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+			  <li class="nav-item">
+				<a class="nav-link active text-primary mx-3" aria-current="page" href="{{url_for('home')}}">Home</a>
+			  </li>
+			  <!-- <li class="nav-item">
+				<a class="nav-link text-body-secondary mx-3 " href="{{url_for('crop_recommend')}}">Crop</a>
+			  </li> -->
+			  <li class="nav-item"></li>
+				<a class="nav-link active text-primary mx-3" aria-current="page" href="#service">Service</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link text-primary mx-3" href="{{url_for('fertilizer_recommendation')}}">Fertilizer</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link text-primary mx-3" href="#about">About</a>
+				  </li>
+			</ul>
+
+		  </div>
 		</div>
-	</nav>
+	  </nav>
 
 
 
@@ -214,7 +217,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<p class="text-da">An Environmental Intelligence Startup<br> </p>
 			</div>
 			<p class="homelogo">
-			<p>Made with ❤️ by AgriNexus</p>
+			<p>Made by AgriNexus</p>
 			
 			
 		</div>
