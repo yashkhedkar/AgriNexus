@@ -372,14 +372,17 @@ li > a:only-child:after { content: ''; }
 }
 
 .banner-top {
-    background: url(../images/main.jpg) no-repeat center;
+    background: url(https://www.frontiersin.org/image/researchtopic/40444) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
 }
-
+.btn-fer:hover{
+	cursor: pointer;
+	opacity: 0.8;
+}
 .banner-top1 {
     background: url(../images/1.jpg) no-repeat center;
     background-size: cover;
