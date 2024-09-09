@@ -8,9 +8,12 @@
 <div class="container py-2 mx-auto my-50 h-10 " style="margin: 9rem;">
   <div class="row">
       <div class="col-sm py-2 py-md-3">
-          <div class="card card-body" style="justify-content: center; background-color:blanchedalmond">
-               <p class="text-center" style="color: black; font-size: 20px;">{{ recommendation }}</p>
+          <div class="card card-body" style="justify-content: center; background-color:rgb(205, 236, 255)">
+               <p class="" style="color: black; font-size: 20px;">{{ recommendation }}</p>
           </div>
+          <button type="button" class="btn btn-success mx-3 my-3"> <a class="text-white" href="{{url_for('home')}}">Home</a>  </button>
+          <button type="button" class="btn btn-primary mx-3 my-3"><a class="text-white" href="{{url_for('fertilizer_recommendation')}}">Fertilizers</a> </button>
+          <button type="button" onclick="window.print('.box')" class="btn btn-primary mx-3 my-3"><a class="text-white" href="">Print</a> </button>
       </div>
   </div>
 </div>

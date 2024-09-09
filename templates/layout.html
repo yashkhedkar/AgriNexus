@@ -154,74 +154,77 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body>
 
-	<!-- Navigation -->
-	<nav class="navbar navbar-expand-lg " style="background: linear-gradient(to right, #323d00, #354001);">
-		<div class="container-fluid mx-6" >
-			<a class="navbar-brand" href="{{ url_for('home') }}"></a>
-				<img src="{{ url_for('static', filename='images/Agri.png') }}" style=" border-radius: 50%; width: 90px; height: 55px " alt="">
-			</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-				aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-		  
-		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-			  <li class="nav-item">
-				<h4><a class="nav-link active  mx-3 --bs-dark-text-emphasis" aria-current="page" href="{{url_for('home')}}">Home</a></h4>
-			  </li>
-			  <!-- <li class="nav-item">
-				<a class="nav-link text-body-secondary mx-3 " href="{{url_for('crop_recommend')}}">Crop</a>
-			  </li> -->
-			  <li class="nav-item"></li>
-				<h4><a class="nav-link active --bs-dark-text-emphasis mx-3" aria-current="page" href="#service">Service</a></h4>
-			  </li>
-			  <li class="nav-item">
-				<h4><a class="nav-link --bs-dark-text-emphasis mx-3" href="{{url_for('fertilizer_recommendation')}}">Fertilizer</a></h4>
-				</li>
-				<li class="nav-item">
-					<h4><a class="nav-link --bs-dark-text-emphasis mx-3" href="#about">About</a></h4>
-				  </li>
-			</ul>
+<!-- Navigation -->
+{% if session.get('logged_in') %}
+<nav class="navbar navbar-expand-lg sticky-top" style="background: linear-gradient(to right, #323d00, #354001);">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='images/Agri.png') }}" style="border-radius: 50%; width: 90px; height: 55px;" alt="AgriNexus Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" style="display: flex;justify-content: space-between;" id="navbarResponsive">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <h4><a class="nav-link active mx-3" aria-current="page" href="{{ url_for('home') }}">Home</a></h4>
+                </li>
+                <li class="nav-item">
+                    <h4><a class="nav-link mx-3" aria-current="page" href="#service">Service</a></h4>
+                </li>
+                <li class="nav-item">
+                    <h4><a class="nav-link mx-3" href="{{ url_for('fertilizer_recommendation') }}">Fertilizer</a></h4>
+                </li>
+                <li class="nav-item">
+                    <h4><a class="nav-link mx-3" href="#about">About</a></h4>
+                </li>
+            </ul>
+            <div class="d-flex ms-auto align-items-center">
+                {% if session.get('logged_in') %}
+                    <!-- Profile Icon and Logout Button -->
+                    <a href="#" class="mx-3">
+                        <img style="height: 40px; width: 40px; border-radius: 50%;" src="{{ url_for('static', filename='images/profile-icon.png') }}" alt="Profile" class="profile-icon">
+                    </a>
+                    <a href="{{ url_for('logout') }}">
+                        <button style="border-radius:12px;" class="btn btn-outline-light ">Logout</button>
+                    </a>
+                {% else %}
+                    <!-- Login Button -->
+                    <a href="{{ url_for('login') }}">
+                        <button style="border-radius: 12px;"  class="btn btn-outline-light">Login</button>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>
+{% endif %}
 
-		  </div>
-		</div>
-	  </nav>
+    {% block body %} {% endblock %}
 
-
-
-
-	{% block body %} {% endblock %}
+	
 
 	<!-- footer -->
-	<footer class="text-center py-5">
-		<div class="container py-md-3">
-			<!-- logo -->
-			<h2 class="logo2 text-center">
-				<a href="{{ url_for('home') }}">
-					AgriNexus
-				</a>
-			</h2>
-			<!-- //logo -->
-			<!-- address -->
-			<div class="contact-left-footer mt-4">
-
-
-
-
-
-				<!-- <a href="community.html">Community</a> -->
-				</p>
-			</div>
-			<div class="w3l-copy text-center">
-				<p class="text-da"><br> </p>
-			</div>
-			<p class="homelogo">
-			<p>Made by AgriNexus</p>
-			
-			
-		</div>
-	</footer>
+	{% if session.get('logged_in') %}
+    <footer class="text-center py-5">
+        <div class="container py-md-3">
+            <!-- logo -->
+            <h2 class="logo2 text-center">
+                <a href="{{ url_for('home') }}">
+                    AgriNexus
+                </a>
+            </h2>
+            <!-- //logo -->
+            <div class="contact-left-footer mt-4"></div>
+            <div class="w3l-copy text-center">
+                <p class="text-da">An Environmental Intelligence Startup<br> </p>
+            </div>
+            <p class="homelogo">
+            <p>Made by AgriNexus</p>
+            </p>
+        </div>
+    </footer>
+    {% endif %}
 	<!-- //footer -->
 
 	<!-- move top icon -->

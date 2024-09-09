@@ -27,24 +27,24 @@
 <!-- //banner -->
 
 
-<section class="blog py-5 d-flex justify-content-center" id="service" style="margin-top: 50px  " >
-	<div class="container py-md-5">
+<section class="blog py-5 d-flex justify-content-center align-items-center" id="service" style="margin-top: 50px;">
+	<div class="container py-md-5 d-flex flex-column justify-content-center align-items-center">
 		<h3 class="heading mb-sm-5 mb-4 text-center"> Our Services</h3>
-		<!-- <div class="row blog-grids">
-			
-			</div> --> 
-			<div class="col-lg-4 col-md-6 blog-middle mb-lg-0 mb-sm-5 pb-lg-0 pb-md-5 " style="margin-left: 375px;">
-				<img src="{{ url_for('static', filename='images/ferti.jpg') }}" class="img-fluid" alt="" />
-				<a href="{{ url_for('fertilizer_recommendation') }}">
-					<div class="blog-info">
-						<a href="{{ url_for('fertilizer_recommendation') }}"><button class="btn-fer" style="width:200px;border-radius: 12px;color: white;font-size: larger;font-weight: 800;background: linear-gradient(to right, #323d00, #354001);" >Fertilizer</button></a>
-						<p class="mt-2">Recommendation about the type of fertilizer best suited for the particular soil
-							and the recommended crop</p>
-					</div>
-				</a>
-			</div>
-			
+
+		<!-- Blog Middle Content -->
+		<div class="col-lg-4 col-md-6 blog-middle mb-lg-0 mb-sm-5 pb-lg-0 pb-md-5 d-flex flex-column justify-content-center align-items-center">
+			<img src="{{ url_for('static', filename='images/ferti.jpg') }}" class="img-fluid" alt="">
+
+			<a href="{{ url_for('fertilizer_recommendation') }}">
+				<div class="blog-info text-center">
+					<button class="btn-fer" style="width: 200px; border-radius: 12px; color: white; font-size: larger; font-weight: 800; background: linear-gradient(to right, #323d00, #354001);">
+						Fertilizer
+					</button>
+					<p class="mt-2">Recommendation about the type of fertilizer best suited for the particular soil and the recommended crop</p>
+				</div>
+			</a>
 		</div>
+
 	</div>
 </section>
 
